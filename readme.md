@@ -1,0 +1,1 @@
+to run rightclick html and run live server

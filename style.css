@@ -1,0 +1,948 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  scroll-behavior: smooth; /* smooth scroll */
+  font-family: Arial, sans-serif;
+}
+
+.about {
+  height: 100vh; /* full viewport height */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #fdfbfa;
+  
+}
+
+/* ------------ BIG CIRCLE WITH IMAGE ------------ */
+.big-circle {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: #7a5239; /* brown ring */
+  top: -76px;
+  left: -250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 25px 20px 40px rgba(0,0,0,0.15);
+}
+
+.big-circle img {
+  width: 88%;
+  height: 88%;
+  border-radius: 50%;
+  object-fit: cover;
+  background: white;
+}
+
+/* ------------ LIGHT BROWN CIRCLES ------------ */
+.light-circle {
+  position: absolute;
+  width: 105px;
+  height: 105px;
+  background: #d6c2b3;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+.light-circle.top {
+  top: 50px;
+  left: 45%;
+}
+
+.light-circle.bottom {
+  bottom: 80px;
+  left: 28%;
+}
+/* ------------ BOTTOM RIGHT CORNER CIRCLE ------------ */
+.corner-circle {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: #7a5239; /* brown */
+  border-radius: 50%;
+  bottom: -175px;   /* move half down */
+  right: -175px;    /* move half right */
+}
+
+/* ------------ CURVED BOX WITH TEXT ------------ */
+.curved-box {
+  position: absolute;
+  background: #7a5239;
+  color: white;
+  padding: 10px 80px;
+  font-size: 24px;
+  font-weight: 800;
+
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 4px 4px 15px rgba(0,0,0,0.15);
+
+  /* POSITION – adjust these */
+  top: 52%;    /* moves up/down */
+  left: 60%;  /* moves left/right */
+  transform: translate(-50%, -50%); /* keeps it centered properly */
+}
+
+
+
+/* ------------ PORTFOLIO TITLE ------------ */
+.portfolio-title {
+  position: absolute;
+  font-family: "Arial MT Pro", Arial, sans-serif;
+  font-weight: 900;       /* bold */
+  font-size: 90px;       /* close to 99.6px */
+  color: #49362d;         /* brown */
+  margin: 0;
+  
+  /* Positioning — adjust these two values */
+  top: 80px;              /* moves up/down */
+  left: 62%;              /* moves left/right */
+  transform: translateX(-50%);
+}
+
+/* ------------ PARAGRAPH BELOW CURVED BOX ------------ */
+.below-box {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  color: #000; /* black text, you can change if you want */
+  
+  position: absolute;
+  top: 60%; /* adjust this so it’s below the curved box */
+  left: 68%;
+  transform: translateX(-50%); /* centers horizontally */
+  
+  width: 60%; /* optional: control paragraph width */
+  word-wrap: break-word;
+  text-align: justify; /* optional: center the text */
+}
+
+
+/* ------------ ABOUT TITLE ------------ */
+.about-title {
+  position: absolute;
+  font-family: "Arial MT Pro", Arial, sans-serif;
+  font-weight: 900;       /* bold */
+  font-size: 60px;        /* close to 65.8 */
+  color: #7a5239;         /* brown */
+  margin: 0;
+
+  /* --- Positioning (adjust these for perfect placement) --- */
+  top: 300px;              /* move up/down */
+  left: 710px;             /* move left/right */
+}
+
+
+/*  next page Education */
+.education {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #fdfbfa; /* blank white-like background */
+  overflow: hidden;
+}
+
+/* Big brown circle bottom right */
+.education .big {
+  position: absolute;
+  width: 750px;
+  height: 750px;
+  border-radius: 50%;
+  background: #7a5239;
+  bottom: -220px;
+  right: -200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 25px 20px 40px rgba(0,0,0,0.15);
+}
+
+.education .big img {
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Overlapping brown circle (top of big circle) */
+.education .overlap {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: #7a5239;
+  top: 210px;
+  right: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 20px 20px 40px rgba(0,0,0,0.15);
+}
+
+.education .overlap img {
+  width: 88%;
+  height: 88%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Two small light circles */
+.education .light.small {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background: #d6cfc8;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+.education .light.small.one {
+  top: 320px;
+  right: 700px;
+}
+
+.education .light.small.two {
+  bottom: 140px;
+  right: 550px;
+}
+
+/* Silver bottom-left corner circle */
+.education .silver-circle {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  background: #d7d9df;
+  border-radius: 50%;
+  bottom: -120px;
+  left: -120px;
+}
+/* ------------  EDUCATION TITLE ------------ */
+.education-title {
+  position: absolute;
+  font-family: "Arial MT Pro", Arial, sans-serif;
+  font-weight: 900;       /* bold */
+  font-size: 90px;       /* close to 99.6px */
+  color: #49362d;         /* brown */
+  margin: 0;
+  
+  /* Positioning — adjust these two values */
+  top: 20px;              /* moves up/down */
+  left: 52%;              /* moves left/right */
+  transform: translateX(-50%);
+}
+/* ------------ CURVED BOX WITH TEXT ------------ */
+.curved1-box {
+  position: absolute;
+  background: #7a5239;
+  color: white;
+  padding: 10px 80px;
+  font-size: 24px;
+  font-weight: 800;
+
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 4px 4px 15px rgba(0,0,0,0.15);
+
+  /* POSITION – adjust these */
+  top: 22%;    /* moves up/down */
+  left: 30%;  /* moves left/right */
+  transform: translate(-50%, -50%); /* keeps it centered properly */
+}
+
+/* ------------ CURVED BOX WITH TEXT ------------ */
+.curved2-box {
+  position: absolute;
+  background: #7a5239;
+  color: white;
+  padding: 10px 80px;
+  font-size: 24px;
+  font-weight: 800;
+
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 4px 4px 15px rgba(0,0,0,0.15);
+
+  /* POSITION – adjust these */
+  top: 52%;    /* moves up/down */
+  left: 28%;  /* moves left/right */
+  transform: translate(-50%, -50%); /* keeps it centered properly */
+}
+
+/* ------------ CURVED BOX WITH TEXT ------------ */
+.curved3-box {
+  position: absolute;
+  background: #7a5239;
+  color: white;
+  padding: 10px 80px;
+  font-size: 24px;
+  font-weight: 800;
+
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 4px 4px 15px rgba(0,0,0,0.15);/* POSITION – adjust these */
+  top: 80%;    /* moves up/down */
+  left: 30%;  /* moves left/right */
+  transform: translate(-50%, -50%); /* keeps it centered properly */
+}
+
+.curved4-box {
+  position: absolute;
+  background: #b0aeac;
+  color: white;
+  padding: 10px 80px;
+  font-size: 12px;
+  font-weight: 800;
+
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 4px 4px 15px rgba(0,0,0,0.15);
+
+  /* POSITION – adjust these */
+  top: 30%;    /* moves up/down */
+  left: 30%;  /* moves left/right */
+  transform: translate(-50%, -50%); /* keeps it centered properly */
+} 
+
+.curved5-box {
+  position: absolute;
+  background: #b0aeac;
+  color: white;
+  padding: 10px 80px;
+  font-size: 12px;
+  font-weight: 800;
+
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 4px 4px 15px rgba(0,0,0,0.15);
+
+  /* POSITION – adjust these */
+  top: 60%;    /* moves up/down */
+  left: 28%;  /* moves left/right */
+  transform: translate(-50%, -50%); /* keeps it centered properly */
+}
+
+.curved0-box {
+  position: absolute;
+  background: #b0aeac;
+  color: white;
+  padding: 10px 80px;
+  font-size: 12px;
+  font-weight: 800;
+
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 4px 4px 15px rgba(0,0,0,0.15);
+
+  /* POSITION – adjust these */
+  top: 88%;    /* moves up/down */
+  left: 28%;  /* moves left/right */
+  transform: translate(-50%, -50%); /* keeps it centered properly */
+}
+
+
+/*  next page Skills */
+.skills {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #fdfbfa; /* blank white-like background */
+  overflow: hidden;
+}
+/* Big brown circle bottom right */
+.skills .big {
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  background: #7a5239;
+  bottom: -10px;
+  left: -300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 25px 20px 40px rgba(0,0,0,0.15);
+}
+
+.skills .big img {
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.skills-list {
+  position: absolute;
+  top: 120px;   /* adjust */
+  left: 600px;   /* adjust */
+}
+
+.skill-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+/* White circle */
+.skill-number {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: white;
+  border: 5px solid #bdbab8;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 24px;
+  font-weight: 700;
+  color: #7a5239;
+
+  position: relative;
+  z-index: 10;
+}
+
+/* Brown rounded box with text */
+.skill-box {
+  width: 350px;          /* length of bar */
+  height: 60px;          /* matches circle height */
+  background: #7a5239;
+  border-radius: 30px;
+
+  margin-left: -18px;    /* overlap circle */
+  padding-left: 40px;    /* space so text starts after circle */
+
+  display: flex;
+  align-items: center;
+
+  font-size: 22px;
+  font-weight: 600;
+  color: white;          /* white text */
+}
+
+/* ------------ BOTTOM RIGHT CORNER CIRCLE ------------ */
+.corner-circle {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: #7a5239; /* brown */
+  border-radius: 50%;
+  bottom: -195px;   /* move half down */
+  right: -175px;    /* move half right */
+}
+
+/* ------------ skills TITLE ------------ */
+.skills-title {
+  position: absolute;
+  font-family: "Arial MT Pro", Arial, sans-serif;
+  font-weight: 900;       /* bold */
+  font-size: 80px;       /* close to 99.6px */
+  color: #49362d;         /* brown */
+  margin: 0;
+  
+  /* Positioning — adjust these two values */
+  top: 155px;              /* moves up/down */
+  left: 85%;              /* moves left/right */
+  transform: translateX(-50%);
+}
+
+/* ------------ exploring LIST  ------------ */
+.exploring-list {
+  position: relative;
+  top: 410px;   /* adjust */
+  left: 998px;   /* adjust */
+}
+
+.exploring-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+/* White circle */
+.exploring-number {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: white;
+  border: 5px solid #bdbab8;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 24px;
+  font-weight: 700;
+  color: #7a5239;
+
+  position: relative;
+  z-index: 10;
+}
+
+/* Brown rounded box with text */
+.exploring-box {
+  width: 350px;          /* length of bar */
+  height: 60px;          /* matches circle height */
+  background: #7a5239;
+  border-radius: 30px;
+
+  margin-left: -18px;    /* overlap circle */
+  padding-left: 40px;    /* space so text starts after circle */
+
+  display: flex;
+  align-items: center;
+
+  font-size: 22px;
+  font-weight: 600;
+  color: white;          /* white text */
+}
+
+/* ------------ exploring TITLE ------------ */
+.exploring-title {
+  position: absolute;
+  font-family: "Arial MT Pro", Arial, sans-serif;
+  font-weight: 900;       /* bold */
+  font-size: 80px;       /* close to 99.6px */
+  color: #49362d;         /* brown */
+  margin: 0;
+  
+  /* Positioning — adjust these two values */
+  top: 50px;              /* moves up/down */
+  left: -15%;              /* moves left/right */
+  transform: translateX(-50%);
+}
+/*  next page Projects */
+.projects {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #fdfbfa; /* blank white-like background */
+  overflow: hidden;
+}
+/* Container to position circle + shadow */
+.circle-container {
+  position: absolute;
+  top: 55%;      /* adjust vertical placement */
+  left: 15%;     /* adjust horizontal placement */
+  transform: translate(-50%, -50%);
+}
+
+/* Circular image with brown border */
+.circle-image {
+  width: 330px;       /* size of circle */
+  height: 330px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 18px solid #afaba8; /* brown border */
+}
+
+.circle-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Soft shadow underneath */
+.circle-shadow {
+  width: 260px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-top: 20px;
+  filter: blur(10px);
+}
+
+/* Container to position circle + shadow */
+.circle1-container {
+  position: absolute;
+  top: 55%;      /* adjust vertical placement */
+  left: 50%;     /* adjust horizontal placement */
+  transform: translate(-50%, -50%);
+}
+
+/* Circular image with brown border */
+.circle1-image {
+  width: 330px;       /* size of circle */
+  height: 330px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 18px solid #afaba8; /* brown border */
+}
+
+.circle1-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Soft shadow underneath */
+.circle1-shadow {
+  width: 260px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-top: 20px;
+  filter: blur(10px);
+}
+
+/* Container to position circle + shadow */
+.circle2-container {
+  position: absolute;
+  top: 55%;      /* adjust vertical placement */
+  left: 85%;     /* adjust horizontal placement */
+  transform: translate(-50%, -50%);
+}
+
+/* Circular image with brown border */
+.circle2-image {
+  width: 330px;       /* size of circle */
+  height: 330px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 18px solid #afaba8; /* brown border */
+}
+
+.circle2-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Soft shadow underneath */
+.circle2-shadow {
+  width: 260px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-top: 20px;
+  filter: blur(10px);
+}
+
+/* ------------ Projects TITLE ------------ */
+.projects-title {
+  position: absolute;
+  font-family: "Arial MT Pro", Arial, sans-serif;
+  font-weight: 900;       /* bold */
+  font-size: 80px;       /* close to 99.6px */
+  color: #49362d;         /* brown */
+  margin: 0;
+  
+  /* Positioning — adjust these two values */
+  top: 70px;              /* moves up/down */
+  left: 50%;              /* moves left/right */
+  transform: translateX(-50%);
+}
+
+/* ------------ CURVED BOX WITH TEXT ------------ */
+.curved6-box {
+  position: absolute;
+  background: #7a5239;
+  color: white;
+  padding: 10px 80px;
+  font-size: 12px;
+  font-weight: 800;
+
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 4px 4px 15px rgba(0,0,0,0.15);
+
+  /* POSITION – adjust these */
+  top: 90%;    /* moves up/down */
+  left: 15%;  /* moves left/right */
+  transform: translate(-50%, -50%); /* keeps it centered properly */
+}
+
+/* ------------ CURVED BOX WITH TEXT ------------ */
+.curved7-box {
+  position: absolute;
+  background: #7a5239;
+  color: white;
+  padding: 10px 80px;
+  font-size: 24px;
+  font-weight: 800;
+
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 4px 4px 15px rgba(0,0,0,0.15);
+
+  /* POSITION – adjust these */
+  top: 90%;    /* moves up/down */
+  left: 50%;  /* moves left/right */
+  transform: translate(-50%, -50%); /* keeps it centered properly */
+}
+
+/* ------------ CURVED BOX WITH TEXT ------------ */
+.curved8-box {
+  position: absolute;
+  background: #7a5239;
+  color: white;
+  padding: 10px 80px;
+  font-size: 24px;
+  font-weight: 800;
+
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 4px 4px 15px rgba(0,0,0,0.15);
+
+  /* POSITION – adjust these */
+  top: 90%;    /* moves up/down */
+  left: 85%;  /* moves left/right */
+  transform: translate(-50%, -50%); /* keeps it centered properly */
+}
+
+/* ------------ LIGHT BROWN CIRCLES ------------ */
+.light-circle1 {
+  position: absolute;
+  width: 105px;
+  height: 105px;
+  background: #d6c2b3;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+.light-circle1.top {
+  top: 50px;
+  left: 85%;
+}
+
+.light-circle1.topp {
+  top: 80px;
+  left: 28%;
+}
+
+/* ------------ BOTTOM RIGHT CORNER CIRCLE ------------ */
+.corner1-circle {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: #7a5239; /* brown */
+  border-radius: 50%;
+  top: -175px;   /* move half down */
+  left: -175px;    /* move half right */
+}
+
+/* next page  thank you */
+.final {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #fdfbfa; /* blank white-like background */
+  overflow: hidden;
+}
+/* Big brown circle  */
+.final .big {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: #7a5239;
+  bottom: 90px;
+  right: -100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 25px 20px 40px rgba(0,0,0,0.15);
+}
+
+.final .big img {
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ------------ BOTTOM RIGHT CORNER CIRCLE ------------ */
+.corner2-circle {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: #7a5239; /* brown */
+  border-radius: 50%;
+  bottom: -105px;   /* move half down */
+  left: -135px;    /* move half right */
+}
+/* ------------ LIGHT BROWN CIRCLES ------------ */
+.light-circle2 {
+  position: absolute;
+  width: 105px;
+  height: 105px;
+  background: #d6c2b3;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+.light-circle2.top {
+  top: 50px;
+  left: 10%;
+}
+
+.light-circle2.bottom {
+  bottom: 20px;
+  right: 28%;
+}
+
+/* ------------ final  TITLE ------------ */
+.final-title {
+  position: absolute;
+  font-family: "Arial MT Pro", Arial, sans-serif;
+  font-weight: 900;       /* bold */
+  font-size: 50px;       /* close to 99.6px */
+  color: #49362d;         /* brown */
+  margin: 0;
+  
+  /* Positioning — adjust these two values */
+  top: 70px;              /* moves up/down */
+  left: 30%;              /* moves left/right */
+  transform: translateX(-50%);
+}
+
+/* ------------ final sub TITLE ------------ */
+.final-subtitle {
+  position: absolute;
+  font-family: "Arial MT Pro", Arial, sans-serif;
+  font-weight: 900;       /* bold */
+  font-size: 50px;       /* close to 99.6px */
+  color: #49362d;         /* brown */
+  margin: 0;
+  
+  /* Positioning — adjust these two values */
+  top: 300px;              /* moves up/down */
+  left: 30%;              /* moves left/right */
+  transform: translateX(-50%);
+}
+
+/* ------------ CURVED BOX WITH TEXT ------------ */
+.curved9-box {
+  position: absolute;
+  background: #7a5239;
+  color: white;
+  padding: 10px 80px;
+  font-size: 24px;
+  font-weight: 800;
+
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 4px 4px 15px rgba(0,0,0,0.15);
+
+  /* POSITION – adjust these */
+  top: 46%;    /* moves up/down */
+  left: 30%;  /* moves left/right */
+  transform: translate(-50%, -50%); /* keeps it centered properly */
+}
+
+/* Contact box centered bottom */
+.contact-box {
+    position: absolute;
+    bottom: 250px; /* adjust how high you want it */
+    left: 30%;
+    transform: translateX(-50%);
+    text-align: left;
+}
+
+.contact-box .line {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #5c3d2e; /* brown */
+    display: flex;
+    align-items: center;
+}
+
+.contact-box .line i {
+    font-size: 20px;
+    color: #5c3d2e;   /* brown icon */
+    margin-right: 12px;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.page {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition: opacity 1.2s ease, transform 1.2s ease; /* smooth fade and scale */
+
+}
+
+.page.hidden {
+  opacity: 0;
+  transform: scale(1.2);
+  pointer-events: none;
+  z-index: -10; 
+}
+
+.page.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+  z-index: 10;
+}
+/* ---------- Floating animation for all circles ---------- */
+@keyframes floatAllCircles {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-15px) translateX(6px); } /* gentle movement */
+  100% { transform: translateY(0) translateX(0); }
+}
+
+/* Apply animation to all circles */
+.light-circle,
+.light-circle1,
+.light-circle2,
+.circle-image,
+.circle1-image,
+.circle2-image {
+  animation: floatAllCircles 6s ease-in-out infinite;
+}
+
