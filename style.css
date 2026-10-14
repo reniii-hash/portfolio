@@ -369,179 +369,262 @@ body, html {
 }
 
 
-/*  next page Skills */
-.skills {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background: #fdfbfa; /* blank white-like background */
-  overflow: hidden;
-}
-/* Big brown circle bottom right */
-.skills .big {
-  position: absolute;
-  width: 900px;
-  height: 900px;
-  border-radius: 50%;
-  background: #7a5239;
-  bottom: -10px;
-  left: -300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 25px 20px 40px rgba(0,0,0,0.15);
+/* ===== FINAL SKILLS PAGE FIX ===== */
+
+section.skills.page {
+  background: #fdfbfa ;
+  color: #493329 ;
+  overflow: hidden ;
 }
 
-.skills .big img {
-  width: 85%;
-  height: 85%;
-  border-radius: 50%;
-  object-fit: cover;
+/* Illustration: keep it on the left */
+section.skills.page > .circle.big {
+  position: absolute ;
+  width: 48vw ;
+  height: 48vw ;
+  max-height: none  ;
+  left: -19vw ;
+  right: auto ;
+  top: 50% ;
+  bottom: auto ;
+  transform: translateY(-50%) ;
+  border: 22px solid #7a5239 ;
+  border-radius: 50% ;
+  background: #1c2c35 ;
+  z-index: 1 ;
 }
 
-.skills-list {
-  position: absolute;
-  top: 120px;   /* adjust */
-  left: 600px;   /* adjust */
+section.skills.page > .circle.big img {
+  width: 100% ;
+  height: 100% ;
+  object-fit: contain ;
+  border-radius: 50% ;
 }
 
-.skill-item {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-bottom: 28px;
+/* Content: separate it from the illustration */
+section.skills.page .skills-content {
+  position: absolute ;
+  left: 39% ;
+  right: 4% ;
+  top: 5% ;
+  width: auto ;
+  height: 90% ;
+  padding: 0 ;
+  display: flex ;
+  flex-direction: column ;
+  justify-content: center ;
+  z-index: 3 ;
 }
 
-/* White circle */
-.skill-number {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: white;
-  border: 5px solid #bdbab8;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-size: 24px;
-  font-weight: 700;
-  color: #7a5239;
-
-  position: relative;
-  z-index: 10;
+/* Heading and description */
+section.skills.page .skills-eyebrow {
+  color: #7a5239 ;
+  font-size: 12px ;
+  font-weight: 700 ;
+  letter-spacing: 4px ;
+  margin: 0 0 8px ;
 }
 
-/* Brown rounded box with text */
-.skill-box {
-  width: 350px;          /* length of bar */
-  height: 60px;          /* matches circle height */
-  background: #7a5239;
-  border-radius: 30px;
-
-  margin-left: -18px;    /* overlap circle */
-  padding-left: 40px;    /* space so text starts after circle */
-
-  display: flex;
-  align-items: center;
-
-  font-size: 22px;
-  font-weight: 600;
-  color: white;          /* white text */
+section.skills.page .skills-title {
+  position: static ;
+  transform: none ;
+  color: #493329 ;
+  font-size: clamp(42px, 4.5vw, 68px) ;
+  line-height: 1.05 ;
+  margin: 0 0 12px ;
 }
 
-/* ------------ BOTTOM RIGHT CORNER CIRCLE ------------ */
-.corner-circle {
-  position: absolute;
-  width: 350px;
-  height: 350px;
-  background: #7a5239; /* brown */
-  border-radius: 50%;
-  bottom: -195px;   /* move half down */
-  right: -175px;    /* move half right */
+section.skills.page .skills-description {
+  color: #51443c ;
+  font-size: 15px ;
+  line-height: 1.6 ;
+  max-width: 650px ;
+  margin: 0 0 18px ;
 }
 
-/* ------------ skills TITLE ------------ */
-.skills-title {
-  position: absolute;
-  font-family: "Arial MT Pro", Arial, sans-serif;
-  font-weight: 900;       /* bold */
-  font-size: 80px;       /* close to 99.6px */
-  color: #49362d;         /* brown */
-  margin: 0;
-  
-  /* Positioning — adjust these two values */
-  top: 155px;              /* moves up/down */
-  left: 85%;              /* moves left/right */
-  transform: translateX(-50%);
+/* Category headings */
+section.skills.page .skill-section {
+  margin: 12px 0 0 ;
 }
 
-/* ------------ exploring LIST  ------------ */
-.exploring-list {
-  position: relative;
-  top: 410px;   /* adjust */
-  left: 998px;   /* adjust */
+section.skills.page .professional-section {
+  margin-top: 20px ;
 }
 
-.exploring-item {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-bottom: 28px;
+section.skills.page .section-heading {
+  display: flex ;
+  align-items: center ;
+  gap: 10px ;
+  margin: 0 0 12px ;
 }
 
-/* White circle */
-.exploring-number {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: white;
-  border: 5px solid #bdbab8;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-size: 24px;
-  font-weight: 700;
-  color: #7a5239;
-
-  position: relative;
-  z-index: 10;
+section.skills.page .section-number {
+  display: flex ;
+  flex: 0 0 40px ;
+  width: 40px ;
+  height: 40px ;
+  align-items: center ;
+  justify-content: center ;
+  border: 3px solid #c8c0bb ;
+  border-radius: 50% ;
+  background: white ;
+  color: #7a5239 ;
+  font-size: 14px ;
 }
 
-/* Brown rounded box with text */
-.exploring-box {
-  width: 350px;          /* length of bar */
-  height: 60px;          /* matches circle height */
-  background: #7a5239;
-  border-radius: 30px;
-
-  margin-left: -18px;    /* overlap circle */
-  padding-left: 40px;    /* space so text starts after circle */
-
-  display: flex;
-  align-items: center;
-
-  font-size: 22px;
-  font-weight: 600;
-  color: white;          /* white text */
+section.skills.page .section-heading h2 {
+  color: #493329 ;
+  font-size: 13px ;
+  font-weight: 800 ;
+  letter-spacing: 1px ;
+  white-space: nowrap ;
 }
 
-/* ------------ exploring TITLE ------------ */
-.exploring-title {
-  position: absolute;
-  font-family: "Arial MT Pro", Arial, sans-serif;
-  font-weight: 900;       /* bold */
-  font-size: 80px;       /* close to 99.6px */
-  color: #49362d;         /* brown */
-  margin: 0;
-  
-  /* Positioning — adjust these two values */
-  top: 50px;              /* moves up/down */
-  left: -15%;              /* moves left/right */
-  transform: translateX(-50%);
+section.skills.page .heading-line {
+  display: block ;
+  flex: 1 ;
+  height: 2px ;
+  background: #d4c5ba ;
 }
+
+/* Force the skills into two columns */
+section.skills.page .skills-grid {
+  display: grid ;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) ;
+  gap: 10px 12px ;
+  padding: 0 0 0 12px ;
+  margin: 0 ;
+}
+
+/* Brown rounded bars */
+section.skills.page .skill-card {
+  display: flex ;
+  align-items: center ;
+  gap: 10px ;
+  min-width: 0 ;
+  min-height: 52px ;
+  padding: 7px 12px ;
+  border: none ;
+  border-radius: 35px ;
+  background: #7a5239 ;
+  color: white ;
+  font-size: 13px ;
+  font-weight: 600 ;
+  line-height: 1.3 ;
+  transition: background 0.2s ease, transform 0.2s ease ;
+}
+
+section.skills.page .skill-card:hover {
+  background: #493329 ;
+  transform: translateY(-2px) ;
+}
+
+/* White icon circles */
+section.skills.page .skill-icon {
+  display: flex ;
+  align-items: center ;
+  justify-content: center ;
+  flex: 0 0 34px ;
+  width: 34px ;
+  height: 34px ;
+  border-radius: 50% ;
+  background: white ;
+  color: #7a5239 ;
+  font-size: 16px ;
+}
+
+/* Bottom-right decoration */
+section.skills.page > .corner-circle {
+  position: absolute ;
+  width: 190px ;
+  height: 190px ;
+  left: auto ;
+  top: auto ;
+  right: -120px ;
+  bottom: -125px ;
+  border-radius: 50% ;
+  background: #7a5239 ;
+  z-index: 0 ;
+}
+
+/* ===== TABLETS ===== */
+@media (max-width: 1000px) and (min-width: 701px) {
+  section.skills.page > .circle.big {
+    width: 42vw ;
+    height: 42vw ;
+    left: -17vw ;
+  }
+
+  section.skills.page .skills-content {
+    left: 32% ;
+    right: 3% ;
+  }
+
+  section.skills.page .skill-card {
+    font-size: 11px ;
+    padding: 6px 8px ;
+    gap: 6px ;
+  }
+
+  section.skills.page .skill-icon {
+    flex-basis: 28px ;
+    width: 28px ;
+    height: 28px ;
+    font-size: 13px ;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 700px) {
+  section.skills.page {
+    overflow-y: auto ;
+    overflow-x: hidden ;
+  }
+
+  section.skills.page > .circle.big {
+    width: 190px ;
+    height: 190px ;
+    left: 50% ;
+    top: 22px ;
+    transform: translateX(-50%) ;
+    border-width: 12px ;
+  }
+
+  section.skills.page .skills-content {
+    left: 6% ;
+    right: 6% ;
+    top: 235px ;
+    width: 88% ;
+    height: auto ;
+    padding-bottom: 35px ;
+    justify-content: flex-start ;
+  }
+
+  section.skills.page .skills-title {
+    font-size: 40px ;
+  }
+
+  section.skills.page .skills-description {
+    font-size: 14px ;
+  }
+
+  section.skills.page .section-heading h2 {
+    font-size: 11px ;
+    white-space: normal ;
+  }
+
+  section.skills.page .skills-grid {
+    grid-template-columns: 1fr ;
+    padding-left: 0 ;
+  }
+
+  section.skills.page .skill-card {
+    font-size: 14px ;
+    min-height: 50px ;
+  }
+}
+
+
 /*  next page Projects */
 .projects {
   position: relative;
@@ -871,7 +954,7 @@ body, html {
   box-shadow: 4px 4px 15px rgba(0,0,0,0.15);
 
   /* POSITION – adjust these */
-  top: 46%;    /* moves up/down */
+  top: 26%;    /* moves up/down */
   left: 30%;  /* moves left/right */
   transform: translate(-50%, -50%); /* keeps it centered properly */
 }
@@ -888,7 +971,7 @@ body, html {
 .contact-box .line {
     font-size: 18px;
     margin: 10px 0;
-    color: #5c3d2e; /* brown */
+    color: #5c2e3e; /* brown */
     display: flex;
     align-items: center;
 }
@@ -906,29 +989,37 @@ body, html {
 }
 
 .page {
-  height: 100vh;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  transition: opacity 1.2s ease, transform 1.2s ease; /* smooth fade and scale */
-
-}
-
-.page.hidden {
-  opacity: 0;
-  transform: scale(1.2);
-  pointer-events: none;
-  z-index: -10; 
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden;
+    z-index: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: none;
 }
 
 .page.active {
-  opacity: 1;
-  transform: scale(1);
-  pointer-events: auto;
-  z-index: 10;
+    position: fixed !important;
+    inset: 0 !important;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 10;
 }
+
+.page.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
 /* ---------- Floating animation for all circles ---------- */
 @keyframes floatAllCircles {
   0% { transform: translateY(0) translateX(0); }
@@ -946,3 +1037,938 @@ body, html {
   animation: floatAllCircles 6s ease-in-out infinite;
 }
 
+/* ==========================================
+   SKILLS PAGE — CLEAN LAYOUT
+   ========================================== */
+
+section.skills.page {
+    position: relative;
+    overflow: hidden;
+    background: #fdfbfa;
+    color: #493329;
+}
+
+/* LEFT ILLUSTRATION CIRCLE */
+section.skills.page > .circle.big {
+    position: absolute !important;
+    width: 43vw !important;
+    height: 43vw !important;
+    max-width: none !important;
+    max-height: none !important;
+
+    left: -14vw !important;
+    right: auto !important;
+    top: 50% !important;
+    bottom: auto !important;
+
+    transform: translateY(-50%) !important;
+
+    background: #1c2c35 !important;
+    border: 18px solid #7a5239 !important;
+    border-radius: 50% !important;
+
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    z-index: 1 !important;
+}
+
+/* Illustration image */
+section.skills.page > .circle.big img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 50% !important;
+}
+
+/* RIGHT CONTENT AREA */
+section.skills.page .skills-content {
+    position: absolute !important;
+
+    left: 39% !important;
+    right: 4% !important;
+    top: 0 !important;
+    bottom: 0 !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+
+    z-index: 2 !important;
+    box-sizing: border-box !important;
+}
+
+/* Small intro label */
+section.skills.page .skills-eyebrow {
+    margin: 0 0 8px !important;
+    color: #7a5239 !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    letter-spacing: 3px !important;
+}
+
+/* Main heading */
+section.skills.page .skills-title {
+    position: static !important;
+    margin: 0 0 12px !important;
+    padding: 0 !important;
+
+    color: #493329 !important;
+    font-size: clamp(44px, 4.5vw, 66px) !important;
+    line-height: 1.05 !important;
+}
+
+/* Description */
+section.skills.page .skills-description {
+    max-width: 650px !important;
+    margin: 0 0 18px !important;
+
+    color: #51443c !important;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+}
+
+/* Skill sections */
+section.skills.page .skill-section {
+    width: 100% !important;
+    margin: 12px 0 0 !important;
+}
+
+section.skills.page .professional-section {
+    margin-top: 18px !important;
+}
+
+/* Category heading row */
+section.skills.page .section-heading {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin: 0 0 12px !important;
+}
+
+/* Number circle */
+section.skills.page .section-number {
+    display: flex !important;
+    flex: 0 0 40px !important;
+    width: 40px !important;
+    height: 40px !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    border: 3px solid #d0c5be !important;
+    border-radius: 50% !important;
+    background: #fff !important;
+
+    color: #7a5239 !important;
+    font-size: 13px !important;
+}
+
+/* Category title */
+section.skills.page .section-heading h2 {
+    margin: 0 !important;
+    color: #493329 !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    letter-spacing: 1px !important;
+    white-space: nowrap !important;
+}
+
+/* Horizontal divider */
+section.skills.page .heading-line {
+    flex: 1 1 auto !important;
+    min-width: 10px !important;
+    height: 2px !important;
+    background: #d4c5ba !important;
+}
+
+/* Two-column skill grid */
+section.skills.page .skills-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px 12px !important;
+
+    width: 100% !important;
+    padding: 0 0 0 12px !important;
+    margin: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Brown skill bars */
+section.skills.page .skill-card {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+    min-height: 52px !important;
+    padding: 7px 12px !important;
+
+    border: none !important;
+    border-radius: 30px !important;
+    background: #7a5239 !important;
+
+    color: #fff !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+
+    box-sizing: border-box !important;
+    transition: background 0.2s ease !important;
+}
+
+section.skills.page .skill-card:hover {
+    background: #493329 !important;
+}
+
+/* White icon circles */
+section.skills.page .skill-icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    flex: 0 0 34px !important;
+    width: 34px !important;
+    height: 34px !important;
+
+    border-radius: 50% !important;
+    background: #fff !important;
+    color: #7a5239 !important;
+    font-size: 15px !important;
+}
+
+/* Bottom-right decoration */
+section.skills.page > .corner-circle {
+    position: absolute !important;
+    left: auto !important;
+    top: auto !important;
+    right: -115px !important;
+    bottom: -130px !important;
+
+    width: 200px !important;
+    height: 200px !important;
+
+    border-radius: 50% !important;
+    background: #7a5239 !important;
+    z-index: 0 !important;
+}
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (max-width: 1000px) and (min-width: 701px) {
+    section.skills.page > .circle.big {
+        width: 39vw !important;
+        height: 39vw !important;
+        left: -15vw !important;
+    }
+
+    section.skills.page .skills-content {
+        left: 31% !important;
+        right: 3% !important;
+    }
+
+    section.skills.page .skills-description {
+        font-size: 13px !important;
+    }
+
+    section.skills.page .skill-card {
+        gap: 6px !important;
+        padding: 6px 8px !important;
+        font-size: 11px !important;
+    }
+
+    section.skills.page .skill-icon {
+        flex-basis: 28px !important;
+        width: 28px !important;
+        height: 28px !important;
+    }
+}
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 700px) {
+    section.skills.page {
+        min-height: 100vh !important;
+        height: auto !important;
+        overflow: hidden !important;
+        padding: 25px 0 35px !important;
+        box-sizing: border-box !important;
+    }
+
+    section.skills.page > .circle.big {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+
+        width: 190px !important;
+        height: 190px !important;
+        margin: 0 auto 25px !important;
+        border-width: 12px !important;
+    }
+
+    section.skills.page .skills-content {
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+
+        width: 88% !important;
+        height: auto !important;
+        margin: 0 auto !important;
+        padding: 0 0 25px !important;
+    }
+
+    section.skills.page .skills-title {
+        font-size: 42px !important;
+    }
+
+    section.skills.page .skills-description {
+        font-size: 14px !important;
+    }
+
+    section.skills.page .skills-grid {
+        grid-template-columns: 1fr !important;
+        padding-left: 0 !important;
+    }
+
+    section.skills.page .section-heading h2 {
+        font-size: 11px !important;
+        white-space: normal !important;
+    }
+
+    section.skills.page .skill-card {
+        font-size: 13px !important;
+    }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE PORTFOLIO
+   Add this at the VERY END of style.css
+========================================== */
+
+@media (max-width: 700px) {
+
+  html,
+  body {
+    width: 100%;
+    min-height: 100%;
+    height: auto !important;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Allow normal vertical scrolling on phones */
+  .page,
+  .page.active,
+  .page.hidden {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 100svh;
+    margin: 0 !important;
+    padding: 32px 20px !important;
+    overflow: hidden !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    z-index: auto !important;
+  }
+
+  .page.hidden {
+    display: block !important;
+  }
+
+  /* ABOUT ME */
+  section.about.page {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0;
+    padding-top: 35px !important;
+    padding-bottom: 65px !important;
+  }
+
+  .big-circle {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: min(70vw, 260px) !important;
+    height: min(70vw, 260px) !important;
+    flex-shrink: 0;
+    margin: 0 auto 24px !important;
+  }
+
+  .big-circle img {
+    width: 88%;
+    height: 88%;
+  }
+
+  .portfolio-title,
+  .about-title,
+  .below-box,
+  .curved-box {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    max-width: 100%;
+  }
+
+  .portfolio-title {
+    order: 1;
+    font-size: clamp(44px, 13vw, 64px) !important;
+    line-height: 1.05;
+    text-align: center;
+    margin: 0 0 16px !important;
+  }
+
+  .curved-box {
+    order: 2;
+    width: fit-content;
+    max-width: 100%;
+    padding: 12px 22px !important;
+    margin: 0 auto 24px !important;
+    text-align: center;
+    font-size: 16px !important;
+  }
+
+  .curved-box h2 {
+    font-size: inherit;
+    overflow-wrap: anywhere;
+  }
+
+  .about-title {
+    order: 3;
+    font-size: clamp(30px, 9vw, 42px) !important;
+    text-align: center;
+    margin: 0 0 14px !important;
+  }
+
+  .below-box {
+    order: 4;
+    width: 100% !important;
+    font-size: 16px !important;
+    line-height: 1.8;
+    text-align: left !important;
+    overflow-wrap: anywhere;
+    margin: 0 !important;
+  }
+
+  /* Decorative circles should not cover the text */
+  .light-circle,
+  .corner-circle {
+    pointer-events: none;
+  }
+
+  .about .light-circle.top {
+    width: 48px;
+    height: 48px;
+    top: 16px;
+    left: auto;
+    right: 12px;
+  }
+
+  .about .light-circle.bottom {
+    width: 55px;
+    height: 55px;
+    bottom: 12px;
+    left: 8px;
+  }
+
+  .about .corner-circle {
+    width: 125px;
+    height: 125px;
+    bottom: -75px;
+    right: -75px;
+  }
+
+  /* EDUCATION */
+  section.education.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding-top: 25px !important;
+    padding-bottom: 65px !important;
+  }
+
+  .education-title,
+  .curved0-box,
+  .curved1-box,
+  .curved2-box,
+  .curved3-box,
+  .curved4-box,
+  .curved5-box {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+  }
+
+  .education-title {
+    order: -2;
+    width: 100%;
+    font-size: clamp(42px, 12vw, 60px) !important;
+    text-align: center;
+    margin: 0 0 14px !important;
+  }
+
+  .education .big,
+  .education .overlap {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    flex-shrink: 0;
+  }
+
+  .education .big {
+    width: min(66vw, 240px) !important;
+    height: min(66vw, 240px) !important;
+    margin: 0 auto 10px;
+  }
+
+  .education .overlap {
+    width: min(43vw, 155px) !important;
+    height: min(43vw, 155px) !important;
+    margin: 0 auto 14px;
+  }
+
+  .education .light.small.one {
+    top: 90px;
+    right: 10px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .education .light.small.two {
+    bottom: 20px;
+    right: 8px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .education .silver-circle {
+    width: 100px;
+    height: 100px;
+    bottom: -60px;
+    left: -55px;
+  }
+
+  .curved0-box,
+  .curved1-box,
+  .curved2-box,
+  .curved3-box,
+  .curved4-box,
+  .curved5-box {
+    width: 100%;
+    max-width: 420px;
+    min-height: 48px;
+    padding: 12px 16px !important;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    border-radius: 24px;
+    overflow-wrap: anywhere;
+  }
+
+  .curved0-box h2,
+  .curved1-box h2,
+  .curved2-box h2,
+  .curved3-box h2,
+  .curved4-box h2,
+  .curved5-box h2 {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  /* Keep education and institution names in a sensible order */
+  .curved1-box { order: 0; }
+  .curved4-box { order: 0; }
+  .curved2-box { order: 0; }
+  .curved5-box { order: 0; }
+  .curved3-box { order: 0; }
+  .curved0-box { order: 0; }
+
+  /* SKILLS */
+  section.skills.page {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    height: auto !important;
+    min-height: 100svh !important;
+    padding: 30px 20px 65px !important;
+    overflow: hidden !important;
+  }
+
+  section.skills.page > .circle.big {
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: min(58vw, 200px) !important;
+    height: min(58vw, 200px) !important;
+    margin: 0 auto 25px !important;
+    flex-shrink: 0;
+  }
+
+  section.skills.page .skills-content {
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 0 15px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+  }
+
+  section.skills.page .skills-title {
+    font-size: clamp(38px, 11vw, 48px) !important;
+    line-height: 1.1 !important;
+    margin-bottom: 12px !important;
+  }
+
+  section.skills.page .skills-description {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 18px !important;
+  }
+
+  section.skills.page .skill-section {
+    width: 100% !important;
+    margin-top: 15px !important;
+  }
+
+  section.skills.page .section-heading {
+    gap: 8px !important;
+    margin-bottom: 12px !important;
+  }
+
+  section.skills.page .section-number {
+    flex: 0 0 34px !important;
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  section.skills.page .section-heading h2 {
+    font-size: clamp(10px, 3.2vw, 13px) !important;
+    letter-spacing: 0.5px !important;
+    white-space: normal !important;
+  }
+
+  section.skills.page .skills-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 10px !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  section.skills.page .skill-card {
+    width: 100% !important;
+    min-height: 52px !important;
+    padding: 9px 12px !important;
+    gap: 10px !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    overflow-wrap: anywhere;
+  }
+
+  section.skills.page .skill-icon {
+    flex: 0 0 34px !important;
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  section.skills.page > .corner-circle {
+    width: 110px !important;
+    height: 110px !important;
+    right: -70px !important;
+    bottom: -70px !important;
+  }
+
+  /* PROJECTS */
+  section.projects.page {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+    padding: 30px 20px 65px !important;
+  }
+
+  .projects-title {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    order: -2;
+    width: 100%;
+    font-size: clamp(40px, 12vw, 54px) !important;
+    text-align: center;
+    margin: 0 0 15px !important;
+  }
+
+  .circle-container,
+  .circle1-container,
+  .circle2-container {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 !important;
+  }
+
+  .circle-image,
+  .circle1-image,
+  .circle2-image {
+    width: min(68vw, 240px) !important;
+    height: min(68vw, 240px) !important;
+    border-width: 10px !important;
+  }
+
+  .circle-shadow,
+  .circle1-shadow,
+  .circle2-shadow {
+    width: min(55vw, 190px) !important;
+    margin-top: 12px !important;
+  }
+
+  .curved6-box,
+  .curved7-box,
+  .curved8-box {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: fit-content;
+    max-width: 100%;
+    padding: 12px 18px !important;
+    margin: 0 auto 12px !important;
+    font-size: 15px !important;
+    text-align: center;
+    overflow-wrap: anywhere;
+    order: 0;
+  }
+
+  .curved6-box h2,
+  .curved7-box h2,
+  .curved8-box h2 {
+    font-size: inherit;
+    line-height: 1.4;
+  }
+
+  .light-circle1.top {
+    top: 80px;
+    left: auto;
+    right: 8px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .light-circle1.topp {
+    top: 150px;
+    left: 5px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .corner1-circle {
+    width: 115px;
+    height: 115px;
+    top: -75px;
+    left: -75px;
+  }
+
+  /* THANK YOU / CONTACT */
+  section.final.page {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 14px !important;
+    padding: 35px 20px 65px !important;
+  }
+
+  .final .big {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: min(60vw, 220px) !important;
+    height: min(60vw, 220px) !important;
+    flex-shrink: 0;
+    margin: 0 auto 10px !important;
+  }
+
+  .final-title,
+  .final-subtitle,
+  .curved9-box,
+  .contact-box {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    max-width: 100%;
+  }
+
+  .final-title {
+    font-size: clamp(34px, 10vw, 46px) !important;
+    text-align: center;
+    line-height: 1.15;
+    margin: 0 !important;
+  }
+
+  .final-subtitle {
+    font-size: clamp(24px, 7vw, 34px) !important;
+    text-align: center;
+    overflow-wrap: anywhere;
+    margin: 0 0 8px !important;
+  }
+
+  .curved9-box {
+    width: fit-content;
+    padding: 12px 20px !important;
+    margin: 0 auto 8px !important;
+    font-size: 17px !important;
+    text-align: center;
+  }
+
+  .curved9-box h2 {
+    font-size: inherit;
+  }
+
+  .contact-box {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+  }
+
+  .contact-box .line {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px !important;
+    line-height: 1.6;
+    margin: 14px 0 !important;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .contact-box .line i {
+    flex: 0 0 20px;
+    width: 20px;
+    font-size: 17px !important;
+    margin-right: 0 !important;
+    padding-top: 2px;
+  }
+
+  .corner2-circle {
+    width: 115px;
+    height: 115px;
+    bottom: -75px;
+    left: -75px;
+  }
+
+  .light-circle2.top {
+    top: 12px;
+    left: 8px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .light-circle2.bottom {
+    bottom: 15px;
+    right: 10px;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+  section.about.page,
+  section.education.page,
+  section.skills.page,
+  section.projects.page,
+  section.final.page {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  .curved-box,
+  .curved0-box,
+  .curved1-box,
+  .curved2-box,
+  .curved3-box,
+  .curved4-box,
+  .curved5-box,
+  .curved6-box,
+  .curved7-box,
+  .curved8-box,
+  .curved9-box {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+
+  /* Keep each project label with its image */
+  .circle-container { order: 0; }
+  .curved6-box { order: 1; }
+  .circle1-container { order: 2; }
+  .curved7-box { order: 3; }
+  .circle2-container { order: 4; }
+  .curved8-box { order: 5; }
