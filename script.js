@@ -1,36 +1,89 @@
+
 let currentPage = 0;
-const pages = document.querySelectorAll('.page');
+const pages = document.querySelectorAll(".page");
 let scrolling = false;
 
-const scrollDelay = 1200; // delay between scrolls (1.2s)
+const scrollDelay = 1200;
+const mobileView = window.matchMedia("(max-width: 700px)");
 
-pages.forEach(p => p.classList.add('hidden'));
-pages[0].classList.add('active');
-pages[0].classList.remove('hidden');
+function initializePages() {
+  if (mobileView.matches) {
+    // Mobile: show all sections for normal touch scrolling.
+    pages.forEach((page) => {
+      page.classList.remove("hidden");
+      page.classList.add("active");
+    });
+
+    scrolling = false;
+    return;
+  }
+
+  // Desktop: show one section at a time.
+  pages.forEach((page) => {
+    page.classList.remove("active");
+    page.classList.add("hidden");
+  });
+
+  if (pages.length > 0) {
+    currentPage = 0;
+    pages[0].classList.remove("hidden");
+    pages[0].classList.add("active");
+  }
+}
 
 function switchPage(next) {
-  if (next < 0 || next >= pages.length) return;
-  
+  if (
+    mobileView.matches ||
+    scrolling ||
+    next < 0 ||
+    next >= pages.length
+  ) {
+    return;
+  }
+
   scrolling = true;
 
-  pages[currentPage].classList.remove('active');
-  pages[currentPage].classList.add('hidden');
+  pages[currentPage].classList.remove("active");
+  pages[currentPage].classList.add("hidden");
 
-  pages[next].classList.remove('hidden');
-  pages[next].classList.add('active');
+  pages[next].classList.remove("hidden");
+  pages[next].classList.add("active");
 
   currentPage = next;
 
-  setTimeout(() => scrolling = false, scrollDelay);
+  setTimeout(() => {
+    scrolling = false;
+  }, scrollDelay);
 }
 
-let lastScroll = 0;
+window.addEventListener("wheel", (event) => {
+  if (mobileView.matches || scrolling) return;
 
-window.addEventListener('wheel', (e) => {
-  const now = Date.now();
-  if (now - lastScroll < scrollDelay) return;
-  lastScroll = now;
-
-  if (e.deltaY > 0) switchPage(currentPage + 1);
-  else switchPage(currentPage - 1);
+  if (event.deltaY > 0) {
+    switchPage(currentPage + 1);
+  } else if (event.deltaY < 0) {
+    switchPage(currentPage - 1);
+  }
 });
+
+window.addEventListener("keydown", (event) => {
+  if (mobileView.matches) return;
+
+  if (
+    event.key === "ArrowDown" ||
+    event.key === "PageDown"
+  ) {
+    event.preventDefault();
+    switchPage(currentPage + 1);
+  } else if (
+    event.key === "ArrowUp" ||
+    event.key === "PageUp"
+  ) {
+    event.preventDefault();
+    switchPage(currentPage - 1);
+  }
+});
+
+mobileView.addEventListener("change", initializePages);
+
+initializePages();
